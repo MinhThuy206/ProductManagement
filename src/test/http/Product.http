@@ -1,0 +1,38 @@
+### List Product
+GET localhost:8080/product/
+Accept: application/json
+
+### Add Product
+POST localhost:8080/product/
+Content-Type: application/json
+
+{
+  "name": "Dell",
+  "price": 203.4,
+  "url": "XX"
+}
+
+
+### Update product
+< {%
+    request.variables.set("id", "2")
+%}
+PUT localhost:8080/product/update?id={{id}}
+Content-Type: application/json
+
+{
+  "name": "Dell",
+  "price": 203.4,
+  "url": "XX",
+  "year": 2016
+}
+
+### Delete Product
+< {%
+    request.variables.set("id", "3")
+%}
+DELETE localhost:8080/product/{{id}}
+
+
+
+
