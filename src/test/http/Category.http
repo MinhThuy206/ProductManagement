@@ -1,0 +1,34 @@
+### List Category
+GET localhost:8080/category/
+Accept: application/json
+
+### Add Categogy
+POST localhost:8080/category/
+Content-Type: application/json
+
+{
+  "name": "laptop"
+
+}
+
+### update Category
+< {%
+    request.variables.set("id", "2")
+%}
+PUT localhost:8080/category/update?id={{id}}
+Content-Type: application/json
+
+{
+  "name": "Dell"
+}
+
+
+### delete category
+< {%
+    request.variables.set("id", "2")
+%}
+DELETE localhost:8080/category/{{id}}
+
+### get one category
+GET localhost:8080/category/getOneCate?id={{id}}
+Accept: application/json
